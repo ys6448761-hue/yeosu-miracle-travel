@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: yeosu-miracle-travel
+    env: node
+    runtime: node
+    buildCommand: npm install --legacy-peer-deps
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: KOMI_COMMISSION_RATE
+        value: 0.15
+      - key: PORT
+        value: 8081
+
+databases:
+  - name: yeosu-miracle-db
+    databaseName: yeosu_miracle_travel
+    user: yeosu_user
