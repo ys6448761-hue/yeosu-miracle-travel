@@ -5,6 +5,8 @@ require('dotenv').config();
 
 const quoteRoutes = require('./api/quotes');
 const bookingRoutes = require('./api/bookings');
+const accommodationRoutes = require('./api/accommodations');
+const activityRoutes = require('./api/activities');
 
 const app = express();
 
@@ -25,6 +27,8 @@ app.get('/api/health', (req, res) => {
 // API 라우트
 app.use('/api/quotes', quoteRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/accommodations', accommodationRoutes);
+app.use('/api/activities', activityRoutes);
 
 // 404 처리
 app.use((req, res) => {
